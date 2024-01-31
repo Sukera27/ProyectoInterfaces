@@ -1,0 +1,78 @@
+﻿<Window x:Class="CRUDInterfaces.Home"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:CRUDInterfaces"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Title="Home" Height="600" Width="850" TextElement.Foreground="{DynamicResource MaterialDesignBody}">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#2596be"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Margin" Value="0,25,0,5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                        x:Name="buttonBorder"
+                        Width="180"
+                        Height="40"
+                        CornerRadius="5"
+                        BorderThickness="1"
+                        BorderBrush="DarkGray">
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="3" Direction="270" Opacity="0.5" Color="Black"/>
+                            </Border.Effect>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="buttonBorder" Property="Background" Value="#307bae"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#383434">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- PopupBox en la esquina superior derecha -->
+        <materialDesign:PopupBox VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,20,0" PlacementMode="BottomAndAlignLeftEdges" StaysOpen="False" Height="25">
+            <StackPanel HorizontalAlignment="Right">
+                <StackPanel Margin="16 10 0 6" Orientation="Horizontal">
+
+                </StackPanel>
+                <Button x:Name="btnCerrarSesion" ToolTip="Cerrar Sesion" Margin="0 8 0 0" Content="Cerrar Sesion" Click="btnCerrarSesion_Click"/>
+                <Button x:Name="btn_exit" ToolTip="Cerrar Aplicacion" Content="Cerrar Aplicacion" Click="salirApp"/>
+            </StackPanel>
+        </materialDesign:PopupBox>
+
+        <!-- Área Azul con Menú de Navegación -->
+        <DockPanel x:Name="menuDockPanel" Grid.Column="0" Width="228">
+            <StackPanel Margin="5">
+                <Button Content="Home" DockPanel.Dock="Top" Click="HomeButton_Click" Style="{StaticResource {x:Type Button}}"/>
+                <Button Content="Mostrar Productos" DockPanel.Dock="Top" Click="ProductosButton_Click" Style="{StaticResource {x:Type Button}}"/>
+                <Button Content="Insertar Productos" DockPanel.Dock="Top" Click="InsertProductsButton_Click" Style="{StaticResource {x:Type Button}}"/>
+                <Button Content="Borrar Productos" DockPanel.Dock="Top" Click="deleteProductsButton_Click" Style="{StaticResource {x:Type Button}}"/>
+                <Button Content="Actualizar Productos" DockPanel.Dock="Top" Click="updateProductsButton_Click" Style="{StaticResource {x:Type Button}}"/>
+                <Button Content="Top Productos + vendidos" DockPanel.Dock="Top" Click="topSoldProductsButton_Click" Style="{StaticResource {x:Type Button}}"/>
+                <Button Content="Top Productos + caros" DockPanel.Dock="Top" Click="topExpensiveProductsButton_Click" Style="{StaticResource {x:Type Button}}"/>
+                <Button Content="Productos sin Stock" DockPanel.Dock="Top" Click="outStockProductsButton_Click" Style="{StaticResource {x:Type Button}}"/>
+            </StackPanel>
+        </DockPanel>
+
+        <!-- Área de Contenido Cambiante (Frame) -->
+        <Frame x:Name="contentFrame" Grid.Column="1" NavigationUIVisibility="Hidden"/>
+
+    </Grid>
+</Window>

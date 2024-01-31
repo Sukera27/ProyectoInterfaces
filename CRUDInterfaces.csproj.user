@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="ActualizarProductos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="BorrarProductos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Home.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="InsertarProductos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MasCaros.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MasVendidos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PaginaProductos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Presentación.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SinStock.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="ActualizarProductos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="BorrarProductos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Home.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="InsertarProductos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MasCaros.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MasVendidos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PaginaProductos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Presentación.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SinStock.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

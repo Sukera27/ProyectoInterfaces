@@ -1,0 +1,25 @@
+﻿<Page x:Class="CRUDInterfaces.ActualizarProductos"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CRUDInterfaces"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ActualizarProductos">
+
+    <Grid >
+        <StackPanel>
+            <TextBlock Text="Nombre del Producto:" Foreground="White"/>
+            <TextBox x:Name="txtProductName" Foreground="White"/>
+            <!-- Mostrar el nombre actual, no editable -->
+
+            <TextBlock Text="Nuevo Nombre del Producto:" Foreground="White"/>
+            <TextBox x:Name="txtNewProductName" Foreground="White"/>
+
+            <!-- Agrega más campos para la información del producto que deseas actualizar -->
+
+            <Button Content="Actualizar" Click="ActualizarProducto"/>
+        </StackPanel>
+    </Grid>
+</Page>
