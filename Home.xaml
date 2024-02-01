@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         xmlns:local="clr-namespace:CRUDInterfaces"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
@@ -43,7 +44,7 @@
     <Grid Background="#383434">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
         <!-- PopupBox en la esquina superior derecha -->
@@ -60,16 +61,64 @@
         <!-- Área Azul con Menú de Navegación -->
         <DockPanel x:Name="menuDockPanel" Grid.Column="0" Width="228">
             <StackPanel Margin="5">
-                <Button Content="Home" DockPanel.Dock="Top" Click="HomeButton_Click" Style="{StaticResource {x:Type Button}}"/>
-                <Button Content="Mostrar Productos" DockPanel.Dock="Top" Click="ProductosButton_Click" Style="{StaticResource {x:Type Button}}"/>
-                <Button Content="Insertar Productos" DockPanel.Dock="Top" Click="InsertProductsButton_Click" Style="{StaticResource {x:Type Button}}"/>
-                <Button Content="Borrar Productos" DockPanel.Dock="Top" Click="deleteProductsButton_Click" Style="{StaticResource {x:Type Button}}"/>
-                <Button Content="Actualizar Productos" DockPanel.Dock="Top" Click="updateProductsButton_Click" Style="{StaticResource {x:Type Button}}"/>
-                <Button Content="Top Productos + vendidos" DockPanel.Dock="Top" Click="topSoldProductsButton_Click" Style="{StaticResource {x:Type Button}}"/>
-                <Button Content="Top Productos + caros" DockPanel.Dock="Top" Click="topExpensiveProductsButton_Click" Style="{StaticResource {x:Type Button}}"/>
-                <Button Content="Productos sin Stock" DockPanel.Dock="Top" Click="outStockProductsButton_Click" Style="{StaticResource {x:Type Button}}"/>
+                <Button DockPanel.Dock="Top" Click="HomeButton_Click" Style="{StaticResource {x:Type Button}}">
+                    <DockPanel HorizontalAlignment="Center">
+                        <fa:IconImage Icon="Home" Height="15" Width="32" Foreground="White"/>
+                        <TextBlock Text="Home" DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+                    </DockPanel>
+                </Button>
+                
+                <Button  DockPanel.Dock="Top" Click="ProductosButton_Click" Style="{StaticResource {x:Type Button}}">
+                    <DockPanel HorizontalAlignment="Center">
+                        <fa:IconImage Icon="List" Height="15" Width="32" Foreground="White"/>
+                        <TextBlock Text="Productos" DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+                    </DockPanel>
+                </Button>
+                <Button  DockPanel.Dock="Top" Click="InsertProductsButton_Click" Style="{StaticResource {x:Type Button}}">
+                    <DockPanel HorizontalAlignment="Center">
+                        <fa:IconImage Icon="Add" Height="15" Width="32" Foreground="White"/>
+                        <TextBlock Text="Insertar Productos" DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+                    </DockPanel>
+                </Button>
+
+                <Button  DockPanel.Dock="Top" Click="deleteProductsButton_Click" Style="{StaticResource {x:Type Button}}">
+                    <DockPanel HorizontalAlignment="Center">
+                        <fa:IconImage Icon="Eraser" Height="15" Width="32" Foreground="White"/>
+                        <TextBlock Text="Borrar Productos" DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+                    </DockPanel>
+                </Button>
+
+                <Button  DockPanel.Dock="Top" Click="updateProductsButton_Click" Style="{StaticResource {x:Type Button}}">
+                    <DockPanel HorizontalAlignment="Center">
+                        <fa:IconImage Icon="Refresh" Height="15" Width="32" Foreground="White"/>
+                        <TextBlock Text="Actualizar Productos" DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+                    </DockPanel>
+                </Button>
+
+                <Button  DockPanel.Dock="Top" Click="topSoldProductsButton_Click" Style="{StaticResource {x:Type Button}}">
+                    <DockPanel HorizontalAlignment="Center">
+                        <fa:IconImage Icon="Star" Height="15" Width="32" Foreground="White"/>
+                        <TextBlock Text="Top + Vendidos" DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+                    </DockPanel>
+                </Button>
+
+                <Button  DockPanel.Dock="Top" Click="topExpensiveProductsButton_Click" Style="{StaticResource {x:Type Button}}">
+                    <DockPanel HorizontalAlignment="Center">
+                        <fa:IconImage Icon="Dollar" Height="15" Width="32" Foreground="White"/>
+                        <TextBlock Text="Top + Caros" DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+                    </DockPanel>
+                </Button>
+
+                <Button  DockPanel.Dock="Top" Click="outStockProductsButton_Click" Style="{StaticResource {x:Type Button}}">
+                    <DockPanel HorizontalAlignment="Center">
+                        <fa:IconImage Icon="Cancel" Height="15" Width="32" Foreground="White"/>
+                        <TextBlock Text="Productos sin Stock" DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+                    </DockPanel>
+                </Button>
+
             </StackPanel>
         </DockPanel>
+
 
         <!-- Área de Contenido Cambiante (Frame) -->
         <Frame x:Name="contentFrame" Grid.Column="1" NavigationUIVisibility="Hidden"/>

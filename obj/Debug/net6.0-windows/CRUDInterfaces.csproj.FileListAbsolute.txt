@@ -59,3 +59,4 @@ C:\Users\rafa_\source\repos\CRUDInterfaces\CRUDInterfaces\obj\Debug\net6.0-windo
 C:\Users\rafa_\source\repos\CRUDInterfaces\CRUDInterfaces\obj\Debug\net6.0-windows\SinStock.baml
 C:\Users\rafa_\source\repos\CRUDInterfaces\CRUDInterfaces\obj\Debug\net6.0-windows\Presentación.g.cs
 C:\Users\rafa_\source\repos\CRUDInterfaces\CRUDInterfaces\obj\Debug\net6.0-windows\Presentación.baml
+C:\Users\rafa_\source\repos\CRUDInterfaces\CRUDInterfaces\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll

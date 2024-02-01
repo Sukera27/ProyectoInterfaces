@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "S2x5lArV1CHkx7J1LAOpkHyxSa6/0hXJjO6iWB+5Q7yfFAuL2+gAYIw7im40CflBQ8cO3tUHnzgJ91uj9ikIqA==",
+  "dgSpecHash": "PKMm8BUAulM7yfpRaYzOE5G4LVqAB2NMiVLWX8c7aLqsYjf1LuhM0t/7l9yZl+anexEJffR1/VISw4wnu16QUw==",
   "success": true,
   "projectFilePath": "C:\\Users\\rafa_\\source\\repos\\CRUDInterfaces\\CRUDInterfaces\\CRUDInterfaces.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rafa_\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
+    "C:\\Users\\rafa_\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512",
     "C:\\Users\\rafa_\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",
     "C:\\Users\\rafa_\\.nuget\\packages\\k4os.compression.lz4\\1.3.5\\k4os.compression.lz4.1.3.5.nupkg.sha512",
     "C:\\Users\\rafa_\\.nuget\\packages\\k4os.compression.lz4.streams\\1.3.5\\k4os.compression.lz4.streams.1.3.5.nupkg.sha512",
