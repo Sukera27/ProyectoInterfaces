@@ -8,18 +8,26 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ActualizarProductos">
 
-    <Grid >
-        <StackPanel>
+    <Grid VerticalAlignment="Center">
+        <StackPanel Margin="20">
             <TextBlock Text="Nombre del Producto:" Foreground="White"/>
-            <TextBox x:Name="txtProductName" Foreground="White"/>
-            <!-- Mostrar el nombre actual, no editable -->
+            <TextBox x:Name="txtProductName" Foreground="White" Margin="0,5,0,10"/>
 
             <TextBlock Text="Nuevo Nombre del Producto:" Foreground="White"/>
-            <TextBox x:Name="txtNewProductName" Foreground="White"/>
+            <TextBox x:Name="txtNewProductName" Foreground="White" Margin="0,5,0,10"/>
 
-            <!-- Agrega más campos para la información del producto que deseas actualizar -->
+            <TextBlock Text="Nueva Cantidad por Unidad:" Foreground="White"/>
+            <TextBox x:Name="txtNewQuantityPerUnit" Foreground="White" Margin="0,5,0,10"/>
 
-            <Button Content="Actualizar" Click="ActualizarProducto"/>
+            <TextBlock Text="Nuevo Precio Unitario:" Foreground="White"/>
+            <TextBox x:Name="txtNewUnitPrice" Foreground="White" Margin="0,5,0,10"/>
+
+            <TextBlock Text="Nuevas Unidades en Pedido:" Foreground="White"/>
+            <TextBox x:Name="txtNewUnitsOnOrder" Foreground="White" Margin="0,5,0,10"/>
+
+            <!-- Agrega más campos según sea necesario -->
+
+            <Button Content="Actualizar" Click="ActualizarProducto_Click" HorizontalAlignment="Center" Margin="0,20,0,0"/>
         </StackPanel>
     </Grid>
 </Page>

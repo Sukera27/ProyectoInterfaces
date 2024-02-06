@@ -136,7 +136,7 @@ namespace CRUDInterfaces.database
         }
 
 
-        public static void InsertarProducto(string productName, string quantityPerUnit)
+        public static void InsertarProducto(string productName, string quantityPerUnit, double unitPrice, short unitsOnOrder)
         {
             try
             {
@@ -145,15 +145,15 @@ namespace CRUDInterfaces.database
                     connection.Open();
 
                     // Construir la consulta de inserción
-                    string consultaInsercion = "INSERT INTO northwind.products (ProductName, QuantityPerUnit) " +
-                                               "VALUES (@ProductName, @QuantityPerUnit);";
+                    string consultaInsercion = "INSERT INTO northwind.products (ProductName, QuantityPerUnit, UnitPrice, UnitsOnOrder) " +
+                                               "VALUES (@ProductName, @QuantityPerUnit, @UnitPrice, @UnitsOnOrder);";
 
                     using (MySqlCommand cmdInsercion = new MySqlCommand(consultaInsercion, connection))
                     {
                         cmdInsercion.Parameters.AddWithValue("@ProductName", productName);
                         cmdInsercion.Parameters.AddWithValue("@QuantityPerUnit", quantityPerUnit);
-
-                        // Puedes agregar parámetros adicionales según sea necesario
+                        cmdInsercion.Parameters.AddWithValue("@UnitPrice", unitPrice);
+                        cmdInsercion.Parameters.AddWithValue("@UnitsOnOrder", unitsOnOrder);
 
                         // Ejecutar la consulta de inserción
                         cmdInsercion.ExecuteNonQuery();
@@ -194,7 +194,7 @@ namespace CRUDInterfaces.database
             }
         }
 
-        public static void ActualizarProducto(string productName, string newProductName)
+        public static void ActualizarProducto(string productName, string newProductName, string newQuantityPerUnit, double newUnitPrice, short newUnitsOnOrder)
         {
             try
             {
@@ -203,12 +203,16 @@ namespace CRUDInterfaces.database
                     connection.Open();
 
                     // Construir la consulta de actualización
-                    string consultaActualizacion = "UPDATE northwind.products SET ProductName = @NewProductName WHERE ProductName = @ProductName;";
+                    string consultaActualizacion = "UPDATE northwind.products SET ProductName = @NewProductName, QuantityPerUnit = @NewQuantityPerUnit, UnitPrice = @NewUnitPrice, UnitsOnOrder = @NewUnitsOnOrder " +
+                                                   "WHERE ProductName = @ProductName;";
 
                     using (MySqlCommand cmdActualizacion = new MySqlCommand(consultaActualizacion, connection))
                     {
                         cmdActualizacion.Parameters.AddWithValue("@ProductName", productName);
                         cmdActualizacion.Parameters.AddWithValue("@NewProductName", newProductName);
+                        cmdActualizacion.Parameters.AddWithValue("@NewQuantityPerUnit", newQuantityPerUnit);
+                        cmdActualizacion.Parameters.AddWithValue("@NewUnitPrice", newUnitPrice);
+                        cmdActualizacion.Parameters.AddWithValue("@NewUnitsOnOrder", newUnitsOnOrder);
 
                         // Ejecutar la consulta de actualización
                         cmdActualizacion.ExecuteNonQuery();
@@ -221,6 +225,7 @@ namespace CRUDInterfaces.database
                 // Puedes manejar el error según tus necesidades
             }
         }
+
 
         public static DataTable ObtenerTopProductosVendidos()
         {

@@ -25,18 +25,20 @@ namespace CRUDInterfaces
         {
             InitializeComponent();
         }
-        private void ActualizarProducto(object sender, RoutedEventArgs e)
+        private void ActualizarProducto_Click(object sender, RoutedEventArgs e)
         {
             // Obtener la información del producto
             string productName = txtProductName.Text; // Nombre actual
             string newProductName = txtNewProductName.Text; // Nuevo nombre
-
-            // Obtener más información del producto según sea necesario
+            string newQuantityPerUnit = txtNewQuantityPerUnit.Text; // Nueva cantidad por unidad
+            double newUnitPrice = Convert.ToDouble(txtNewUnitPrice.Text); // Nuevo precio unitario
+            short newUnitsOnOrder = Convert.ToInt16(txtNewUnitsOnOrder.Text); // Nuevas unidades en pedido
 
             // Llamar al método para actualizar el producto en la base de datos
-            DataBase.ActualizarProducto(productName, newProductName /*, más parámetros si es necesario */);
+            DataBase.ActualizarProducto(productName, newProductName, newQuantityPerUnit, newUnitPrice, newUnitsOnOrder);
 
             // Puedes agregar lógica adicional, como mostrar un mensaje de éxito, navegar a otra página, etc.
         }
+
     }
 }

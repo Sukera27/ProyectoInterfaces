@@ -30,13 +30,14 @@ namespace CRUDInterfaces
             // Obtener los valores de los campos
             string productName = txtProductName.Text;
             string quantityPerUnit = txtQuantityPerUnit.Text;
-
-            // Puedes obtener los demás valores de los campos de manera similar
+            double unitPrice = Convert.ToDouble(txtUnitPrice.Text);
+            short unitsOnOrder = Convert.ToInt16(txtUnitsOnOrder.Text);
 
             // Llamar al método para insertar el producto en la base de datos
-            DataBase.InsertarProducto(productName, quantityPerUnit /*, otros valores*/);
+            DataBase.InsertarProducto(productName, quantityPerUnit, unitPrice, unitsOnOrder);
 
             // Puedes agregar lógica adicional, como mostrar un mensaje de éxito, navegar a otra página, etc.
         }
+
     }
 }
