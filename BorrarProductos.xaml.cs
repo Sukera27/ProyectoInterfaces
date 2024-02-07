@@ -16,9 +16,7 @@ using System.Windows.Shapes;
 
 namespace CRUDInterfaces
 {
-    /// <summary>
-    /// Lógica de interacción para BorrarProductos.xaml
-    /// </summary>
+    
     public partial class BorrarProductos : Page
     {
         public BorrarProductos()
@@ -34,7 +32,7 @@ namespace CRUDInterfaces
             // Llamar al método para eliminar el producto de la base de datos
             DataBase.EliminarProducto(productName);
 
-            // Puedes agregar lógica adicional, como mostrar un mensaje de éxito, navegar a otra página, etc.
+            MessageBox.Show("Producto eliminado correctamente", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

@@ -18,13 +18,13 @@
                     <StackPanel>
                     <StackPanel Margin="16 10 0 6" Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock VerticalAlignment="Center" Text="Dark Mode"></TextBlock>
-                            <ToggleButton Cursor="Hand" ToolTip="Enable Dark Mode" Margin="12 0 8 0" x:Name="themeToggle" IsChecked="{Binding isDarkTheme}" Click="toggleTheme">
+                            <ToggleButton Cursor="Hand" ToolTip="Modo Oscuro" Margin="12 0 8 0" x:Name="themeToggle" IsChecked="{Binding isDarkTheme}" Click="toggleTheme">
 
                             </ToggleButton>
                         </StackPanel>
                         <Button ToolTip="Tienes problemas para logearte?" Margin="0 8 0 0" Content="Help me">
                         </Button>
-                        <Button x:Name="btn_exit" ToolTip="Cerrar Aplicacion" Content="Exit Applicaction" Click="salirApp"></Button> 
+                        <Button x:Name="btn_exit" ToolTip="Cerrar Aplicacion" Content="Cerrar Aplicacion" Click="salirApp"></Button> 
                     </StackPanel>
                 </materialDesign:PopupBox>
                 <Image Margin="0 60 0 5" Source="C:\Users\rafa_\source\repos\CRUDInterfaces\CRUDInterfaces\BaseDeDatos-removebg-preview.png" Height="100"/>

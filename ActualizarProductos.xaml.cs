@@ -27,6 +27,17 @@ namespace CRUDInterfaces
         }
         private void ActualizarProducto_Click(object sender, RoutedEventArgs e)
         {
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrWhiteSpace(txtProductName.Text) ||
+                string.IsNullOrWhiteSpace(txtNewProductName.Text) ||
+                string.IsNullOrWhiteSpace(txtNewQuantityPerUnit.Text) ||
+                string.IsNullOrWhiteSpace(txtNewUnitPrice.Text) ||
+                string.IsNullOrWhiteSpace(txtNewUnitsOnOrder.Text))
+            {
+                MessageBox.Show("Todos los campos deben ser completados", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return; // Salir del método sin continuar
+            }
+
             // Obtener la información del producto
             string productName = txtProductName.Text; // Nombre actual
             string newProductName = txtNewProductName.Text; // Nuevo nombre
@@ -37,8 +48,9 @@ namespace CRUDInterfaces
             // Llamar al método para actualizar el producto en la base de datos
             DataBase.ActualizarProducto(productName, newProductName, newQuantityPerUnit, newUnitPrice, newUnitsOnOrder);
 
-            // Puedes agregar lógica adicional, como mostrar un mensaje de éxito, navegar a otra página, etc.
+            MessageBox.Show("Producto actualizado correctamente", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
         }
+
 
     }
 }

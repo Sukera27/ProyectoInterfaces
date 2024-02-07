@@ -27,6 +27,16 @@ namespace CRUDInterfaces
         }
         private void GuardarProducto(object sender, RoutedEventArgs e)
         {
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrWhiteSpace(txtProductName.Text) ||
+                string.IsNullOrWhiteSpace(txtQuantityPerUnit.Text) ||
+                string.IsNullOrWhiteSpace(txtUnitPrice.Text) ||
+                string.IsNullOrWhiteSpace(txtUnitsOnOrder.Text))
+            {
+                MessageBox.Show("Todos los campos deben ser completados", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return; // Salir del método sin continuar
+            }
+
             // Obtener los valores de los campos
             string productName = txtProductName.Text;
             string quantityPerUnit = txtQuantityPerUnit.Text;
@@ -36,8 +46,9 @@ namespace CRUDInterfaces
             // Llamar al método para insertar el producto en la base de datos
             DataBase.InsertarProducto(productName, quantityPerUnit, unitPrice, unitsOnOrder);
 
-            // Puedes agregar lógica adicional, como mostrar un mensaje de éxito, navegar a otra página, etc.
+            MessageBox.Show("Producto añadido correctamente", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
         }
+
 
     }
 }
