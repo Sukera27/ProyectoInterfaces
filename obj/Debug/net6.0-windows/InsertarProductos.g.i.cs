@@ -86,7 +86,7 @@ namespace CRUDInterfaces {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CRUDInterfaces;component/insertarproductos.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CRUDInterfaces;V1.0.0.0;component/insertarproductos.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\InsertarProductos.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

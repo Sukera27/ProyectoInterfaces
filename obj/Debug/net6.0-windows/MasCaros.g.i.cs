@@ -62,7 +62,7 @@ namespace CRUDInterfaces {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CRUDInterfaces;component/mascaros.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CRUDInterfaces;V1.0.0.0;component/mascaros.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\MasCaros.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
